@@ -1,0 +1,17 @@
+x-veld:
+  chain:
+    description:
+    topic:
+    additional:
+
+services:
+  veld:
+    extends:
+      file: ./code/REPLACE
+      service: veld
+    volumes:
+      - ./data/REPLACE/:/veld/input/
+      - ./data/REPLACE/:/veld/output/
+    environment:
+      REPLACE:
+
