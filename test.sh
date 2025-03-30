@@ -17,21 +17,30 @@ function compare {
 
 echo "--- test veld_demo_02__clean.yaml ---" | tee test.log
 
-#data/demo_02/in/grimms_fairy_tales.txt :
+file_in=./data/demo_02/in/grimms_fairy_tales.txt
 md5_in_correct=3b460a560a61b4e70e5ccc6f63c48063
-#data/demo_02/out/grimms_fairy_tales__clean.txt :
+
+file_out_clean=./data/demo_02/out/grimms_fairy_tales__clean.txt
 md5_out_clean_correct=c55240515498f45c912bbcfbc313f339
-#data/demo_02/out/grimms_fairy_tales__dirty.txt :
+rm $file_out_clean 2> /dev/null
+
+file_out_dirty=./data/demo_02/out/grimms_fairy_tales__dirty.txt
 md5_out_dirty_correct=074bdd74e5bc95b6023dd7040bb61320
-#data/demo_02/out/veld_rumpelstiltkin.yaml :
-md5_out_metadata_correct=2c5f697390be9df5903262308e011692
+rm $file_out_dirty 2> /dev/null
 
-docker-compose -f veld_demo_02__clean.yaml up &>> test.log
+file_out_metadata=./data/demo_02/out/veld_rumpelstiltkin.yaml
+md5_out_metadata_correct=e0cc88f9f87b60d1e3719ca430282680
+rm $file_out_metadata 2> /dev/null
 
-compare ./data/demo_02/in/grimms_fairy_tales.txt "$md5_in_correct"
-compare ./data/demo_02/out/grimms_fairy_tales__clean.txt "$md5_out_clean_correct"
-compare ./data/demo_02/out/grimms_fairy_tales__dirty.txt "$md5_out_dirty_correct"
-compare ./data/demo_02/out/veld_rumpelstiltkin.yaml "$md5_out_metadata_correct"
+command="docker-compose -f veld_demo_02__clean.yaml up"
+echo "executing: ${command}" | tee -a test.log
+eval "$command" &>> test.log
+echo "finished" | tee -a test.log
+
+compare "$file_in" "$md5_in_correct"
+compare "$file_out_clean" "$md5_out_clean_correct"
+compare "$file_out_dirty" "$md5_out_dirty_correct"
+compare "$file_out_metadata" "$md5_out_metadata_correct"
 
 
 echo "number of failed tests: ${num_failed}"
