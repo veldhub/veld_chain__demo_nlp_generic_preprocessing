@@ -15,6 +15,29 @@ function compare {
 }
 
 
+echo "--- test veld_demo_01__lowercase.yaml ---" | tee test.log
+
+file_in=./data/demo_01/in/grimms_fairy_tales.txt
+md5_in_correct=3b460a560a61b4e70e5ccc6f63c48063
+
+file_out=./data/demo_01/out/grimms_fairy_tales__lowercased.txt
+md5_out_correct=7d1efcc7a70e479d71405fe24a84e7ea
+rm $file_out 2> /dev/null
+
+file_out_metadata=./data/demo_01/out/veld__grimms_fairy_tales.yaml
+md5_out_metadata_correct=624fe00777dd3d260b714632afb121b5
+rm $file_out_metadata 2> /dev/null
+
+command="docker-compose -f veld_demo_01__lowercase.yaml up"
+echo "executing: ${command}" | tee -a test.log
+eval "$command" &>> test.log
+echo "finished" | tee -a test.log
+
+compare "$file_in" "$md5_in_correct"
+compare "$file_out" "$md5_out_correct"
+compare "$file_out_metadata" "$md5_out_metadata_correct"
+
+
 echo "--- test veld_demo_02__clean.yaml ---" | tee test.log
 
 file_in=./data/demo_02/in/grimms_fairy_tales.txt
@@ -43,5 +66,6 @@ compare "$file_out_dirty" "$md5_out_dirty_correct"
 compare "$file_out_metadata" "$md5_out_metadata_correct"
 
 
+echo "--- all tests executed ---"
 echo "number of failed tests: ${num_failed}"
 
