@@ -28,8 +28,8 @@ file_out_dirty=./data/demo_02/out/grimms_fairy_tales__dirty.txt
 md5_out_dirty_correct=074bdd74e5bc95b6023dd7040bb61320
 rm $file_out_dirty 2> /dev/null
 
-file_out_metadata=./data/demo_02/out/veld_rumpelstiltkin.yaml
-md5_out_metadata_correct=e0cc88f9f87b60d1e3719ca430282680
+file_out_metadata=./data/demo_02/out/veld__grimms_fairy_tales.yaml
+md5_out_metadata_correct=b70c028a520f5e27d1f76849e7569aaf
 rm $file_out_metadata 2> /dev/null
 
 command="docker-compose -f veld_demo_02__clean.yaml up"
