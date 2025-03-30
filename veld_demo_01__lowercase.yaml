@@ -19,7 +19,7 @@ services:
       in_file: "grimms_fairy_tales.txt"
       #in_file: "data_wikipedia.txt"
       out_file: "grimms_fairy_tales__lowercased.txt"
-      out_metadata_file: "veld__grimms_fairy_tales.yaml"
+      out_metadata_file: "veld__grimms_fairy_tales__lowercased.yaml"
       set_case: "lower"
       #set_case: "upper"
       out_metadata_description: "lowercased sample data"

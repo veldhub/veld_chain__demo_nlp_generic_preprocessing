@@ -21,7 +21,7 @@ services:
       out_file_clean: "grimms_fairy_tales__clean.txt"
       out_file_dirty: "grimms_fairy_tales__dirty.txt"
       min_clean_char_percentage: 80
-      out_metadata_file: "veld__grimms_fairy_tales.yaml"
+      out_metadata_file: "veld__grimms_fairy_tales__clean.yaml"
       out_metadata_description: "cleaned sample data"
       out_metadata_topic: "NLP,ETL"
       out_metadata_content: "training data,demo data"
