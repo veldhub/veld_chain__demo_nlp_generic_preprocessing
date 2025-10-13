@@ -27,3 +27,8 @@ REPLACE
 docker compose -f veldREPLACE.yaml up
 ```
 
+## acknowledgments
+
+The test data at [./data/demo_01/in/grimms_fairy_tales.txt]
+(./data/demo_01/in/grimms_fairy_tales.txt) was provided by https://www.gutenberg.org/ .
+
