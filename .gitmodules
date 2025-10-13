@@ -1,3 +1,6 @@
 [submodule "code/veld_code__nlp_generic_preprocessing"]
 	path = code/veld_code__nlp_generic_preprocessing
 	url = https://github.com/veldhub/veld_code__nlp_generic_preprocessing.git
+[submodule "code/veld_code__downloader"]
+	path = code/veld_code__downloader
+	url = https://github.com/veldhub/veld_code__downloader.git
