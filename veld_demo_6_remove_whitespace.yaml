@@ -1,0 +1,19 @@
+# TODO: add metadata
+x-veld:
+  chain:
+    description:
+    topic:
+    additional:
+
+services:
+  veld_demo_6_remove_whitespace:
+    extends:
+      file: ./code/veld_code__nlp_generic_preprocessing/veld_preprocess_remove_whitespace.yaml
+      service: veld_remove_whitespace
+    volumes:
+      - ./data/demo_5/:/veld/input/
+      - ./data/demo_6/:/veld/output/data/
+    environment:
+      in_file: "grimms_fairy_tales.txt"
+      out_file: "grimms_fairy_tales.txt"
+

@@ -43,27 +43,27 @@ services:
       veld_demo_4_lemmatize:
         condition: service_completed_successfully
 
-  veld_demo_6_change_case:
+  veld_demo_6_remove_whitespace:
     extends:
-      file: ./veld_demo_6_change_case.yaml
-      service: veld_demo_6_change_case
+      file: ./veld_demo_6_remove_whitespace.yaml
+      service: veld_demo_6_remove_whitespace
     depends_on:
       veld_demo_5_remove_punctuation:
         condition: service_completed_successfully
 
-  veld_demo_7_sample:
+  veld_demo_7_change_case:
     extends:
-      file: ./veld_demo_7_sample.yaml
-      service: veld_demo_7_sample
+      file: ./veld_demo_7_change_case.yaml
+      service: veld_demo_7_change_case
     depends_on:
-      veld_demo_6_change_case:
+      veld_demo_6_remove_whitespace:
         condition: service_completed_successfully
 
-  veld_demo_8_remove_whitespace:
+  veld_demo_8_sample:
     extends:
-      file: ./veld_demo_8_remove_whitespace.yaml
-      service: veld_demo_8_remove_whitespace
+      file: ./veld_demo_8_sample.yaml
+      service: veld_demo_8_sample
     depends_on:
-      veld_demo_7_sample:
+      veld_demo_7_change_case:
         condition: service_completed_successfully
 

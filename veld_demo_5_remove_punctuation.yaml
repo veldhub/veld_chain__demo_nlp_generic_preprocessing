@@ -1,4 +1,5 @@
 # TODO: add metadata
+# export foo="foooo"
 x-veld:
   chain:
     description:

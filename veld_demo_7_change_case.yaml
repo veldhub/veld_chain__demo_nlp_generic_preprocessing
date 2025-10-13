@@ -6,13 +6,13 @@ x-veld:
     additional:
 
 services:
-  veld_demo_6_change_case:
+  veld_demo_7_change_case:
     extends:
       file: ./code/veld_code__nlp_generic_preprocessing/veld_preprocess_change_case.yaml
       service: veld_preprocess_change_case
     volumes:
-      - ./data/demo_5/:/veld/input/
-      - ./data/demo_6/:/veld/output/data/
+      - ./data/demo_6/:/veld/input/
+      - ./data/demo_7/:/veld/output/data/
     environment:
       in_file: "grimms_fairy_tales.txt"
       out_file: "grimms_fairy_tales.txt"
