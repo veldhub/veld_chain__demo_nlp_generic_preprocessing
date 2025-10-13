@@ -1,0 +1,21 @@
+# TODO: add metadata
+x-veld:
+  chain:
+    description:
+    topic:
+    additional:
+
+services:
+  veld_demo_7_sample:
+    extends:
+      file: ./code/veld_code__nlp_generic_preprocessing/veld_preprocess_sample.yaml
+      service: veld_preprocess_sample
+    volumes:
+      - ./data/demo_6/:/veld/input/
+      - ./data/demo_7/:/veld/output/data/
+    environment:
+      in_file: "grimms_fairy_tales.txt"
+      out_file: "grimms_fairy_tales.txt"
+      percentage_sample: 1
+      sample_random_seed: 42
+

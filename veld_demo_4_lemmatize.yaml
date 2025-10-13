@@ -1,0 +1,20 @@
+# TODO: add metadata
+x-veld:
+  chain:
+    description:
+    topic:
+    additional:
+
+services:
+  veld_demo_4_lemmatize:
+    extends:
+      file: ./code/veld_code__nlp_generic_preprocessing/veld_preprocess_lemmatize.yaml
+      service: veld_preprocess_lemmatize
+    volumes:
+      - ./data/demo_3/:/veld/input/
+      - ./data/demo_4/:/veld/output/data/
+    environment:
+      in_file: "grimms_fairy_tales.txt"
+      out_file: "grimms_fairy_tales.txt"
+      spacy_model: "en_core_web_lg"
+

@@ -1,0 +1,20 @@
+# TODO: add metadata
+x-veld:
+  chain:
+    description:
+    topic:
+    additional:
+
+services:
+  veld_demo_2_split_sentences:
+    extends:
+      file: ./code/veld_code__nlp_generic_preprocessing/veld_preprocess_split_sentences.yaml
+      service: veld_preprocess_split_sentences
+    volumes:
+      - ./data/demo_1/:/veld/input/
+      - ./data/demo_2/:/veld/output/data/
+    environment:
+      in_file: "grimms_fairy_tales.txt"
+      out_file: "grimms_fairy_tales.txt"
+      language: "english"
+

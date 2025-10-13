@@ -1,0 +1,69 @@
+# TODO: add metadata
+x-veld:
+  chain:
+    description:
+    topic:
+    additional:
+
+services:
+  veld_demo_1_regex_replace:
+    extends:
+      file: ./veld_demo_1_regex_replace.yaml
+      service: veld_demo_1_regex_replace
+
+  veld_demo_2_split_sentences:
+    extends:
+      file: ./veld_demo_2_split_sentences.yaml
+      service: veld_demo_2_split_sentences
+    depends_on:
+      veld_demo_1_regex_replace:
+        condition: service_completed_successfully
+
+  veld_demo_3_clean:
+    extends:
+      file: ./veld_demo_3_clean.yaml
+      service: veld_demo_3_clean
+    depends_on:
+      veld_demo_2_split_sentences:
+        condition: service_completed_successfully
+
+  veld_demo_4_lemmatize:
+    extends:
+      file: ./veld_demo_4_lemmatize.yaml
+      service: veld_demo_4_lemmatize
+    depends_on:
+      veld_demo_3_clean:
+        condition: service_completed_successfully
+
+  veld_demo_5_remove_punctuation:
+    extends:
+      file: ./veld_demo_5_remove_punctuation.yaml
+      service: veld_demo_5_remove_punctuation
+    depends_on:
+      veld_demo_4_lemmatize:
+        condition: service_completed_successfully
+
+  veld_demo_6_change_case:
+    extends:
+      file: ./veld_demo_6_change_case.yaml
+      service: veld_demo_6_change_case
+    depends_on:
+      veld_demo_5_remove_punctuation:
+        condition: service_completed_successfully
+
+  veld_demo_7_sample:
+    extends:
+      file: ./veld_demo_7_sample.yaml
+      service: veld_demo_7_sample
+    depends_on:
+      veld_demo_6_change_case:
+        condition: service_completed_successfully
+
+  veld_demo_8_remove_whitespace:
+    extends:
+      file: ./veld_demo_8_remove_whitespace.yaml
+      service: veld_demo_8_remove_whitespace
+    depends_on:
+      veld_demo_7_sample:
+        condition: service_completed_successfully
+
