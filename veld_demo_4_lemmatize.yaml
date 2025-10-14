@@ -13,6 +13,7 @@ services:
     volumes:
       - ./data/demo_3/:/veld/input/
       - ./data/demo_4/:/veld/output/data/
+      - ./data/demo_4_tmp/:/veld/tmp/output/
     environment:
       in_file: "grimms_fairy_tales.txt"
       out_file: "grimms_fairy_tales.txt"
