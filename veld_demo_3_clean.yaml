@@ -14,7 +14,6 @@ services:
       - ./data/demo_2/:/veld/input/
       - ./data/demo_3/:/veld/output/data_clean/
       - ./data/demo_3/:/veld/output/data_dirty/
-      - ./data/demo_3_tmp/:/veld/tmp/output/
     environment:
       in_file: "grimms_fairy_tales.txt"
       out_file_clean: "grimms_fairy_tales.txt"
