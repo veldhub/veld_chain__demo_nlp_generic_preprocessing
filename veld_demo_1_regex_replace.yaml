@@ -22,5 +22,4 @@ services:
       out_file: "grimms_fairy_tales.txt"
       regex_pattern_match: "\n"
       regex_pattern_replacement: " "
-      cpu_count: 14
 
