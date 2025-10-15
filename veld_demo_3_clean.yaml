@@ -17,6 +17,6 @@ services:
     environment:
       in_file: "grimms_fairy_tales.txt"
       out_file_clean: "grimms_fairy_tales.txt"
-      out_file_dirty: "grimms_fairy_tales__dirty.txt"
+      out_file_dirty: "grimms_fairy_tales_dirty.txt"
       min_percentage_char: 60
 
