@@ -13,10 +13,10 @@ services:
     volumes:
       - ./data/demo_0/:/veld/input/
       - ./data/demo_1/:/veld/output/data/
+      - ./data/demo_1_tmp/:/veld/tmp/output/
     environment:
       in_file: "grimms_fairy_tales.txt"
       out_file: "grimms_fairy_tales.txt"
       regex_pattern_match: "\n"
       regex_pattern_replacement: " "
-      cpu_count: 14
 

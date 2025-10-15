@@ -19,5 +19,4 @@ services:
       out_file_clean: "grimms_fairy_tales.txt"
       out_file_dirty: "grimms_fairy_tales__dirty.txt"
       min_percentage_char: 60
-      cpu_count: 12
 
