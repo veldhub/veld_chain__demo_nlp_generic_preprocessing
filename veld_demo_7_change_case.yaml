@@ -11,9 +11,9 @@ services:
       file: ./code/veld_code__nlp_generic_preprocessing/veld_preprocess_change_case.yaml
       service: veld_preprocess_change_case
     volumes:
-      - ./data/demo_6/:/veld/input/
-      - ./data/demo_7/:/veld/output/data/
-      - ./data/demo_7_tmp/:/veld/tmp/output/
+      - /scratch-cbe/users/stefan.resch/veld_data__demo_nlp_generic_preprocessing/data/demo_6/:/veld/input/
+      - /scratch-cbe/users/stefan.resch/veld_data__demo_nlp_generic_preprocessing/data/demo_7/:/veld/output/data/
+      - /scratch-cbe/users/stefan.resch/veld_data__demo_nlp_generic_preprocessing/tmp/demo_7/:/veld/tmp/output/
     environment:
       in_file: "grimms_fairy_tales.txt"
       out_file: "grimms_fairy_tales.txt"

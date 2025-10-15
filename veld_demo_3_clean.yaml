@@ -11,10 +11,10 @@ services:
       file: ./code/veld_code__nlp_generic_preprocessing/veld_preprocess_clean.yaml
       service: veld_preprocess_clean
     volumes:
-      - ./data/demo_2/:/veld/input/
-      - ./data/demo_3/:/veld/output/data_clean/
-      - ./data/demo_3/:/veld/output/data_dirty/
-      - ./data/demo_3_tmp/:/veld/tmp/output/
+      - /scratch-cbe/users/stefan.resch/veld_data__demo_nlp_generic_preprocessing/data/demo_2/:/veld/input/
+      - /scratch-cbe/users/stefan.resch/veld_data__demo_nlp_generic_preprocessing/data/demo_3/:/veld/output/data_clean/
+      - /scratch-cbe/users/stefan.resch/veld_data__demo_nlp_generic_preprocessing/data/demo_3/:/veld/output/data_dirty/
+      - /scratch-cbe/users/stefan.resch/veld_data__demo_nlp_generic_preprocessing/tmp/demo_3/:/veld/tmp/output/
     environment:
       in_file: "grimms_fairy_tales.txt"
       out_file_clean: "grimms_fairy_tales.txt"
