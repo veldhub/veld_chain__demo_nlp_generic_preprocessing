@@ -10,7 +10,7 @@ title="veld_chain__demo_nlp"
 
 ntfy "${title}: start"
 
-apptainer-compose -f veld_demo_7_change_case.yaml up
+apptainer-compose -f veld_demo_1_regex_replace.yaml up
 
 ntfy "${title}: end"
 
